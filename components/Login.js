@@ -68,10 +68,8 @@ const Login = (props) => {
         <Text style={styles.splashText1}>Welcome back</Text>
         {message.current &&
           message.current.map((data, key) => (
-            <View style={tw`px-4 py-3 rounded-md bg-rose-100`}>
-              <Text key={key} style={tw`text-rose-500 py-1`}>
-                {data}
-              </Text>
+            <View key={key} style={tw`px-4 py-3 rounded-md bg-rose-100`}>
+              <Text style={tw`text-rose-500 py-1`}>{data}</Text>
             </View>
           ))}
         <TextInput

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Inutz",
-    "slug": "inutz",
+    "name": "Note Me",
+    "slug": "NoteMe",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -20,7 +20,7 @@
       "supportsTablet": true
     },
     "android": {
-      "package":"inutz.app",
+      "package":"noteme.app",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"

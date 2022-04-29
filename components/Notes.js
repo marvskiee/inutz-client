@@ -27,11 +27,13 @@ const Notes = (props) => {
   };
   useEffect(async () => {
     if (!mounted.current) {
+      mounted.current = true;
       await config
         .get("note/find/" + props.get_token)
         .then((res) => props.set_notes(res.data.message))
         .catch((e) => console.log("Warning Occur in Notes.js: " + e.message));
-      mounted.current = true;
+    } else {
+      mounted.current = false;
     }
   });
 
@@ -74,7 +76,7 @@ const Notes = (props) => {
                 paddingVertical: 30,
               }}
             >
-              Note is Empty
+              {mounted.current ? "Note is Empty" : "Fetching Data..."}
             </Text>
           )}
         </View>
