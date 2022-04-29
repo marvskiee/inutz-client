@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { StatusBar } from "expo-status-bar";
+import tw from "twrnc";
 
 import {
   StyleSheet,
@@ -57,11 +58,7 @@ const EditNote = (props) => {
               source={require("../assets/back.png")}
             />
           </TouchableOpacity>
-          <Text
-            style={{ fontSize: 22, fontWeight: "bold", color: colors.violet }}
-          >
-            Edit Note
-          </Text>
+          <Text style={tw`text-slate-900 text-2xl font-bold`}>Edit Note</Text>
         </View>
         <View>
           <Text style={styles.buttonPlain} onPress={submitHandler}>

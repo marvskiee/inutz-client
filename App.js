@@ -2,6 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import React, { useState, useEffect, useRef } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { externalStyle } from "./style/externalStyle";
+import tw from "twrnc";
 
 import Register from "./components/Register";
 import Login from "./components/Login";
@@ -98,23 +99,16 @@ const App = () => {
             justifyContent: "center",
           }}
         >
-          <Text style={[styles.splashText1, { color: colors.violet }]}>
-            Inutz
+          <Text style={tw`mb-3 text-4xl text-indigo-600 font-bold`}>
+            Note Me
           </Text>
-          <Text
-            style={{
-              paddingVertical: 10,
-              color: colors.lightblack,
-              fontSize: 17,
-              lineHeight: 25,
-            }}
-          >
+          <Text style={tw`text-slate-600 leading-6 my-1`}>
             is a simple and awesome notepad app. It gives you a quick and simple
             notepad editing experience when you write notes
           </Text>
-          <View style={[styles.splashButton]}>
+          <View style={tw`p-4 bg-slate-900 rounded-md mt-4`}>
             <Text
-              style={styles.splashButtonText}
+              style={tw`text-white text-center font-bold`}
               onPress={() => {
                 storeData();
               }}

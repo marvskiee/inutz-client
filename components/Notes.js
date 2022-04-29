@@ -13,12 +13,17 @@ import BottomNav from "./BottomNav";
 import TopNav from "./TopNav";
 import config from "../config/axios_config";
 import colors from "../config/colors";
+import tw from "twrnc";
 
 const Notes = (props) => {
   const mounted = useRef();
+  const [search, setSearch] = useState("");
   const selectHandler = (data) => {
     props.set_selected(data);
     props.action("selected-note");
+  };
+  const searchHandler = (value) => {
+    setSearch(value);
   };
   useEffect(async () => {
     if (!mounted.current) {
@@ -29,6 +34,10 @@ const Notes = (props) => {
       mounted.current = true;
     }
   });
+
+  const data = props.get_notes.filter((note) =>
+    note?.title.toLowerCase().includes(search.toLowerCase())
+  );
   return (
     <View style={styles.containerNotCenter}>
       <TopNav action={props.action} />
@@ -38,11 +47,17 @@ const Notes = (props) => {
           paddingHorizontal: 20,
         }}
       >
+        <TextInput
+          style={tw`mt-2 bg-slate-100 px-4 py-2 rounded-md`}
+          onChangeText={searchHandler}
+          placeholder="Search Title"
+          autoFocus={true}
+        />
         <View style={{ paddingVertical: 10 }}>
-          {props.get_notes.length > 0 ? (
-            props.get_notes.map((data, index) => (
+          {data?.length > 0 ? (
+            data.map((data, index) => (
               <TouchableOpacity key={index} onPress={() => selectHandler(data)}>
-                <View style={[styles.card, styles.shadowProp]}>
+                <View style={tw`bg-slate-100 p-4 rounded-md my-1`}>
                   <Text style={styles.cardTitle}>{data["title"]}</Text>
                   <Text style={styles.cardBody} numberOfLines={4}>
                     {data["body"]}

@@ -79,7 +79,7 @@ export const externalStyle = {
   topNav: {
     backgroundColor: colors.white,
     padding: 20,
-    marginTop: 30,
+    marginTop: 20,
     position: "absolute",
     top: 0,
     flex: 1,
@@ -128,7 +128,7 @@ export const externalStyle = {
   composeNav: {
     position: "absolute",
     padding: 20,
-    marginTop: 30,
+    marginTop: 20,
     top: 0,
     flex: 1,
     alignItems: "center",
@@ -139,7 +139,7 @@ export const externalStyle = {
   profileNav: {
     position: "absolute",
     padding: 20,
-    marginTop: 30,
+    marginTop: 20,
     top: 0,
     flex: 1,
     alignItems: "center",

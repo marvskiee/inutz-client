@@ -13,6 +13,7 @@ import { externalStyle } from "../style/externalStyle";
 import BottomNav from "./BottomNav";
 import config from "../config/axios_config";
 import colors from "../config/colors";
+import tw from "twrnc";
 
 const Compose = (props) => {
   const [title, setTitle] = useState("");
@@ -58,11 +59,7 @@ const Compose = (props) => {
               source={require("../assets/back.png")}
             />
           </TouchableOpacity>
-          <Text
-            style={{ fontSize: 22, fontWeight: "bold", color: colors.violet }}
-          >
-            Compose
-          </Text>
+          <Text style={tw`text-slate-900 text-2xl font-bold`}>Compose</Text>
         </View>
         <View>
           <Text
